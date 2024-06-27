@@ -24,7 +24,7 @@ function App() {
     <>
       <video src={background} autoPlay muted loop className='background' />
       <div className='wrapper'>
-        <Search setCityName={setCityName} setWeather={setWeather} cityName={cityName}/>
+        <Search setCityName={setCityName} setWeather={setWeather}/>
         <Form weather={weather} />
       </div>
     </>
