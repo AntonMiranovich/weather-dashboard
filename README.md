@@ -1,8 +1,17 @@
-# React + Vite
+1. **Frontend with React:**
+   - We'll use **React.js** to build the user interface.
+   - React allows efficient updates to the page content when data changes.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+2. **HTTP Requests with Axios:**
+   - To fetch temperature data, we'll use **Axios**.
 
-Currently, two official plugins are available:
+3. **Displaying Data:**
+   - We'll create components to display temperature for various cities.
+   - Data will be loaded from the API via Axios and shown on the page.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+4. **City Search:**
+   - We'll add an input field where users can enter a city name.
+   - Upon entering a city, we'll make a request to the server and retrieve temperature data for that city.
+
+5. **Building with Vite:**
+   - For project bundling, we'll use **Vite**.
