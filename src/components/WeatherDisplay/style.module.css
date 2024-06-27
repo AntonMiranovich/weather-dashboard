@@ -1,0 +1,11 @@
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.weatherTemp,
+.weatherInfo {
+    font-size: 24px;
+    font-weight: 600;
+}

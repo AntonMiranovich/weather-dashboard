@@ -1,14 +1,32 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import './App.css'
-import Search from './components/SearchForm'
+import Search from './components/SearchForm/SearchForm'
+import Form from './components/WeatherDisplay/WeatherDisplay'
+import axios from 'axios'
+import background from './assets/weatherVideo.mp4'
+
+const apiKey = '59247bfe3dff1b7dacdacf06de546a1b'
 
 function App() {
+  const [cityName, setCityName] = useState('')
+  const [weather, setWeather] = useState({})
 
+  const response = async () => {
+    const data = await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}`)
+    setWeather(data.data)
+  }
+
+  useEffect(() => {
+    response()
+  }, [cityName])
 
   return (
     <>
-      <Search />
-      <h1>Hello</h1>
+      <video src={background} autoPlay muted loop className='background' />
+      <div className='wrapper'>
+        <Search setCityName={setCityName} setWeather={setWeather} cityName={cityName}/>
+        <Form weather={weather} />
+      </div>
     </>
   )
 }
