@@ -7,12 +7,12 @@ function SearchForm({ setCityName, setWeather }) {
     return (
         <div className={styles.wrapper}>
             <h1 className={styles.text}>Weather</h1>
-            <input className={styles.weatherInput} type="text" onChange={(e) => setCity(e.target.value)} placeholder="Your city" value={city} />
-            <button className={styles.weatherButton} onClick={() => setCityName(city)}>Search</button>
             <button className={styles.weatherButton} onClick={() => {
                 setCity('')
                 setWeather({})
             }}>Reset</button>
+            <input className={styles.weatherInput} type="text" onChange={(e) => setCity(e.target.value)} placeholder="Your city" value={city} />
+            <button className={styles.weatherButton} onClick={() => setCityName(city)}>Search</button>
         </div>
     );
 }
