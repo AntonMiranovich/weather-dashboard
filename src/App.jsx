@@ -9,10 +9,12 @@ const apiKey = '59247bfe3dff1b7dacdacf06de546a1b'
 
 function App() {
   const [cityName, setCityName] = useState('')
-  const [weather, setWeather] = useState({})
+  const [weathe, setWeather] = useState({})
+
 
   const response = async () => {
     const data = await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}`)
+    console.log(data);
     setWeather(data.data)
   }
 
@@ -24,8 +26,8 @@ function App() {
     <>
       <video src={background} autoPlay muted loop className='background' />
       <div className='wrapper'>
-        <Search setCityName={setCityName} setWeather={setWeather}/>
-        <Form weather={weather} />
+        <Search setCityName={setCityName} setWeather={setWeather} />
+        <Form weathe={weathe} />
       </div>
     </>
   )
