@@ -8,13 +8,12 @@ import background from './assets/weatherVideo.mp4'
 const apiKey = '59247bfe3dff1b7dacdacf06de546a1b'
 
 function App() {
-  const [cityName, setCityName] = useState('')
+  const [cityName, setCityName] = useState(localStorage.getItem('nameCity') || '')
   const [weathe, setWeather] = useState({})
 
 
   const response = async () => {
     const data = await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}`)
-    console.log(data);
     setWeather(data.data)
   }
 

@@ -12,7 +12,10 @@ function SearchForm({ setCityName, setWeather }) {
                 setWeather({})
             }}>Reset</button>
             <input className={styles.weatherInput} type="text" onChange={(e) => setCity(e.target.value)} placeholder="Your city" value={city} />
-            <button className={styles.weatherButton} onClick={() => setCityName(city)}>Search</button>
+            <button className={styles.weatherButton} onClick={() => {
+                setCityName(city)
+                localStorage.setItem('nameCity', city)
+            }}>Search</button>
         </div>
     );
 }
